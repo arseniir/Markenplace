@@ -16,15 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from ProjectA.views import MakeProductAPIView, show
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('ProjectA.urls')),
-    path('api/make/', MakeProductAPIView.as_view(), name='api-make'),
-    path('purchase/', show, name='purchase'),
+    path('', include('ProjectA.urls')),
+    path('', include('ProjectB.urls')),
+
+    # path('api/product/', MakeProductAPIView.as_view(), name='product_detail'),
+    # path('api/product/<int:pk>/', UpdateProductView.as_view(), name='other-action'),
 
 
 
 ]
+    # path('api/make/', MakeProductAPIView.as_view(), name='api-make'),

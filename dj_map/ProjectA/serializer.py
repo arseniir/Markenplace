@@ -1,14 +1,8 @@
 from rest_framework import serializers
-from .models import MakeProductModel
+from .models import MakeProductModel, CommentFeedbackModel
 
 
-# class MakeProductMa:
-#     def __init__(self, name, description, category, price, photo):
-#         self.name = name
-#         self.description = description
-#         self.category = category
-#         self.price = price
-#         self.photo = photo
+
 
 
 
@@ -18,5 +12,12 @@ class MakeProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-    def create(self, validated_data):
-        return MakeProductModel.objects.create(**validated_data)
+    # def create(self, validated_data):
+    #     return MakeProductModel.objects.create(**validated_data)
+
+
+
+class CommentFeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CommentFeedbackModel
+        fields = '__all__'
