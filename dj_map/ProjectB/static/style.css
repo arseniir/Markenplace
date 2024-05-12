@@ -11,6 +11,9 @@
     background: rgb(26, 26, 159);
 }
 
-header{
-    padding-bottom: 40px;
+.div-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    background: rgb(140, 165, 233);
 }

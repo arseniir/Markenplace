@@ -10,3 +10,11 @@ class CommentFeedbackForm(forms.Form):
     class Meta:
         model = CommentFeedbackModel
         fields = ['comment', 'feedback']
+
+
+class UpdateDeleteProductForm(forms.ModelForm):
+    class Meta:
+        model = MakeProductModel
+        fields = ['name', 'description', 'category', 'price', 'photo']
+
+        

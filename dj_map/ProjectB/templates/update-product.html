@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    
+
+
+    <table border="1px">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Photo</th>
+            <th>link for changes</th>
+        </tr>
+        
+        {% for purchase in purchases %}
+        <tr>
+            <td><h3 class="card-name">{{ purchase.name }}</h3></td>
+            <td><p class="card-description">{{ purchase.description }}</p></td>
+            <td><p class="category">{{ purchase.category }}</p></td>
+            <td><p class="price">${{ purchase.price }}</p></td>
+            <td><img class="card-img-top" src="{{ purchase.photo.url }}" alt="Card image cap"></td>
+            <td><a href="{% url 'update_product_id' product_id=purchase.id %}">Детальніше</a>
+            </td>
+        </tr>
+        {% endfor %}
+      </table>
+      
+
+</body>
+</html>

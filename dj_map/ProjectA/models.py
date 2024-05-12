@@ -5,7 +5,7 @@ class MakeProductModel(models.Model):
     description = models.TextField(max_length=200)
     category = models.CharField(max_length=50)
     price = models.IntegerField()
-    photo = models.ImageField(upload_to='ProjectA/images_products/')
+    photo = models.ImageField(upload_to='ProjectA/images_products/', blank=True)
 
     # def __self__(self):
     #     return f'{self.name}'
