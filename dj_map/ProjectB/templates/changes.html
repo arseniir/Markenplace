@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Update Product</h1>
-    <form method="put" action="{% url 'update_products' %}" enctype="multipart/form-data">
+    <form method="post" action="{% url 'update_product_id' product_id=product_id %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Update Product</button>    

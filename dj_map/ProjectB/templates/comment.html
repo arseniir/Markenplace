@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+</head>
+<body>
+    <h1>All comments about this product</h1>
+    <div class="coments">
+        {% for purchase in purchases %}
+        <p>{{ purchase.comment }}</p>
+        <p>{{ purchase.feedback }}</p>
+        {% endfor %}
+
+    </div>
+
+
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if error_message %}
+            <p>{{ error_message }}</p>
+        {% endif %}
+        
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+
+
+</body>
+</html>

@@ -18,3 +18,5 @@ class UpdateDeleteProductForm(forms.ModelForm):
         fields = ['name', 'description', 'category', 'price', 'photo']
 
         
+class DeleteProductForm(forms.Form):
+    point = forms.CharField(label='Write to delete')

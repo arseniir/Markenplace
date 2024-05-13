@@ -18,7 +18,8 @@
             <th>Category</th>
             <th>Price</th>
             <th>Photo</th>
-            <th>link for changes</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         
         {% for purchase in purchases %}
@@ -28,7 +29,8 @@
             <td><p class="category">{{ purchase.category }}</p></td>
             <td><p class="price">${{ purchase.price }}</p></td>
             <td><img class="card-img-top" src="{{ purchase.photo.url }}" alt="Card image cap"></td>
-            <td><a href="{% url 'update_product_id' product_id=purchase.id %}">Детальніше</a>
+            <td><a href="{% url 'update_product_id' product_id=purchase.id %}">Change it</a>
+            <td><a href="{% url 'delete_product_id' id=purchase.id %}">Delete</a></td>
             </td>
         </tr>
         {% endfor %}

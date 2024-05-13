@@ -32,6 +32,7 @@
                 <p class="card-description">{{ product.description }}</p>
                 <p class="category">{{ product.category }}</p>
                 <p class="price">${{ product.price }}</p>
+                <button><a href="{% url 'comment' product.id %}">View Card</a></button>
             </div>
         </div>
         {% endfor %}
