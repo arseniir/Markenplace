@@ -13,36 +13,20 @@ class UpdateProductView(generics.RetrieveUpdateDestroyAPIView):
     queryset = MakeProductModel.objects.all()
     serializer_class = MakeProductSerializer
 
+
+
 # add comment
 class CommentFeedbackView(generics.ListCreateAPIView):
     queryset = CommentFeedbackModel.objects.all()
     serializer_class = CommentFeedbackSerializer
 
 
-class UpdateCommentFeedbackView(generics.RetrieveUpdateDestroyAPIView):
+class UpdateCommentFeedbackView(generics.CreateAPIView):
     queryset = CommentFeedbackModel.objects.all()
     serializer_class = CommentFeedbackSerializer
 
 
 
-
-# class MakeProductAPIView(View):
-#     def get(self, request):
-#         makeproduct = MakeProductForm()
-#         return render(request, 'add_product.html', {'makeproduct': makeproduct})
-    
-#     def post(self, request):
-#         makeproduct = MakeProductForm(request.POST)
-#         if makeproduct.is_valid():
-#             name = makeproduct.cleaned_data['name']
-#             description = makeproduct.cleaned_data['description']
-#             category = makeproduct.cleaned_data['category']
-#             price = makeproduct.cleaned_data['price']
-#             photo = makeproduct.cleaned_data['photo']
-
-#             fi = MakeProductModel.objects.create(name=name, description=description, category=category, price=price, photo=photo)
-#             fi.save()
-#         return render(request, 'add_product.html', {'makeproduct': makeproduct})
 
 
 

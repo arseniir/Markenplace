@@ -6,27 +6,23 @@
     <title>Comment</title>
 </head>
 <body>
-    <h1>All comments about this product</h1>
-    <div class="coments">
-        {% for purchase in purchases %}
-        <p>{{ purchase.comment }}</p>
-        <p>{{ purchase.feedback }}</p>
-        {% endfor %}
-
-    </div>
-
-
-    
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-
-        {% if error_message %}
-            <p>{{ error_message }}</p>
-        {% endif %}
-        
         <button type="submit">Submit</button>
     </form>
+
+    {% if tojson %}
+        <h1>All comments about this product {{id}}</h1>
+        <div class="coments">
+            {% for el in tojson %}
+                <p>Comment: {{ el.comment }}, feedback: {{ el.feedback }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    
+    
 
 
 

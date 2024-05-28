@@ -12,9 +12,7 @@ class MakeProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-    # def create(self, validated_data):
-    #     return MakeProductModel.objects.create(**validated_data)
-
+ 
 
 
 class CommentFeedbackSerializer(serializers.ModelSerializer):

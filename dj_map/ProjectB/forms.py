@@ -6,7 +6,7 @@ class MakeProductForm(forms.ModelForm):
         model = MakeProductModel
         fields = ['name', 'description', 'category', 'price', 'photo']
 
-class CommentFeedbackForm(forms.Form):
+class CommentFeedbackForm(forms.ModelForm):
     class Meta:
         model = CommentFeedbackModel
         fields = ['comment', 'feedback']

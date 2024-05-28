@@ -1,6 +1,5 @@
 from django.urls import path
 from ProjectB.views import show_products, MakeProduct, all_products, UpdateDeleteProduct, DeleteProductView, CreateComment
-# from . import views
 
 
 urlpatterns = [
@@ -12,5 +11,6 @@ urlpatterns = [
     path('update_products/', all_products ,name='update_products' ),
     path('delete_products/<int:id>/', DeleteProductView.as_view(), name='delete_product_id'),
 
-    path('comment/<int:id>/', CreateComment.as_view(), name='comment'),  
+    # path('comment/<int:id>/', CreateComment.as_view(), name='comment'),  
+    path('comment/<int:id>/', CreateComment.as_view(), name='comment'),
 ]

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class MakeProductModel(models.Model):
     name = models.CharField(max_length=40)
     description = models.TextField(max_length=200)
@@ -15,3 +16,4 @@ class CommentFeedbackModel(models.Model):
 
     comment = models.TextField()
     feedback = models.IntegerField(choices=cho)
+    product = models.ForeignKey('MakeProductModel', on_delete=models.CASCADE, blank=True, null=True)
